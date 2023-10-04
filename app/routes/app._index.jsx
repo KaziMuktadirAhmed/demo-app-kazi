@@ -14,14 +14,17 @@ import {
   List,
   Link,
 } from "@shopify/polaris";
-
+import { getQRCodes } from "../models/QRCode.server";
 import { authenticate } from "../shopify.server";
 
-export const loader = async ({ request }) => {
-  await authenticate.admin(request);
+export async function loader({ request }) {
+  const { admin, session } = await authenticate.admin(request);
+  const qrCodes = await getQRCodes(session.shop, admin.graphql);
 
-  return null;
-};
+  return json({
+    qrCodes,
+  });
+}
 
 export async function action({ request }) {
   const { admin } = await authenticate.admin(request);
