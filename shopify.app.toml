@@ -2,7 +2,7 @@
 
 name = "demo-app-kazi"
 client_id = "478564b157e5c62c2b02a66a48c9d3c0"
-application_url = "https://processes-varied-swiss-jimmy.trycloudflare.com"
+application_url = "https://champion-spirits-annie-meter.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -12,9 +12,9 @@ use_legacy_install_flow = true
 
 [auth]
 redirect_urls = [
-  "https://processes-varied-swiss-jimmy.trycloudflare.com/auth/callback",
-  "https://processes-varied-swiss-jimmy.trycloudflare.com/auth/shopify/callback",
-  "https://processes-varied-swiss-jimmy.trycloudflare.com/api/auth/callback"
+  "https://champion-spirits-annie-meter.trycloudflare.com/auth/callback",
+  "https://champion-spirits-annie-meter.trycloudflare.com/auth/shopify/callback",
+  "https://champion-spirits-annie-meter.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

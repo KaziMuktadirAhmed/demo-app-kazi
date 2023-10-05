@@ -27,6 +27,7 @@
     "@shopify/app-bridge-types": "^0.0.3",
     "@shopify/cli": "3.49.4",
     "@shopify/polaris": "^11.1.2",
+    "@shopify/polaris-icons": "^7.9.0",
     "@shopify/shopify-app-remix": "^1.3.0",
     "@shopify/shopify-app-session-storage-prisma": "^1.1.1",
     "cross-env": "^7.0.3",
