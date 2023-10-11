@@ -2,7 +2,7 @@
 
 name = "demo-app-kazi"
 client_id = "478564b157e5c62c2b02a66a48c9d3c0"
-application_url = "https://comedy-tried-samples-address.trycloudflare.com"
+application_url = "https://colleagues-weight-mj-killer.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -12,9 +12,9 @@ use_legacy_install_flow = true
 
 [auth]
 redirect_urls = [
-  "https://comedy-tried-samples-address.trycloudflare.com/auth/callback",
-  "https://comedy-tried-samples-address.trycloudflare.com/auth/shopify/callback",
-  "https://comedy-tried-samples-address.trycloudflare.com/api/auth/callback"
+  "https://colleagues-weight-mj-killer.trycloudflare.com/auth/callback",
+  "https://colleagues-weight-mj-killer.trycloudflare.com/auth/shopify/callback",
+  "https://colleagues-weight-mj-killer.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
