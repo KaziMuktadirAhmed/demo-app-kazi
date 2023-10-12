@@ -135,7 +135,7 @@ export default function QRCodeForm() {
           <VerticalStack gap="5">
             <Card>
               <VerticalStack gap="5">
-                <Text as={"h2"} variant="headingLg">
+                <Text as="h2" variant="headingLg">
                   Title
                 </Text>
                 <TextField

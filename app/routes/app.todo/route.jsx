@@ -9,19 +9,26 @@ import {
   Button,
   Checkbox,
 } from "@shopify/polaris";
+import { useNavigate } from "@remix-run/react";
 
 function Todo() {
   const [todoList, setToDoList] = useState([
     { text: "Initial todo", completed: false },
   ]);
   const [todo, setToDo] = useState({ text: "", completed: false });
+  const navigate = useNavigate();
 
   return (
     <Page>
+      <ui-title-bar title="Progress tracker">
+        <button variant="breadcrumb" onClick={() => navigate("/app")}>
+          Home
+        </button>
+      </ui-title-bar>
       <Layout>
         <Layout.Section>
           <Card>
-            <Text as="h1">Progress tracker</Text>
+            <Text as="h1">Tasks at hand</Text>
           </Card>
         </Layout.Section>
         <Layout.Section>
@@ -88,4 +95,3 @@ function Todo() {
 }
 
 export default Todo;
-// make a todo component that I can call from this component
