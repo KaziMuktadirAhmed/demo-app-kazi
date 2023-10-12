@@ -14,9 +14,6 @@ import {
 function Todo() {
   const [todoList, setToDoList] = useState([
     { text: "Initial todo", completed: false },
-    { text: "Initial todo 1", completed: false },
-    { text: "Initial todo 2", completed: true },
-    { text: "Initial todo 3", completed: false },
   ]);
   const [todo, setToDo] = useState({ text: "", completed: false });
 
