@@ -8,7 +8,6 @@ import {
   TextField,
   Button,
   Checkbox,
-  Box,
 } from "@shopify/polaris";
 
 function Todo() {
