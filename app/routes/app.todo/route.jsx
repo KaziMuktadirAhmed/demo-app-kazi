@@ -8,11 +8,15 @@ import {
   TextField,
   Button,
   Checkbox,
+  Box,
 } from "@shopify/polaris";
 
 function Todo() {
   const [todoList, setToDoList] = useState([
     { text: "Initial todo", completed: false },
+    { text: "Initial todo 1", completed: false },
+    { text: "Initial todo 2", completed: true },
+    { text: "Initial todo 3", completed: false },
   ]);
   const [todo, setToDo] = useState({ text: "", completed: false });
 
@@ -25,12 +29,39 @@ function Todo() {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          {todoList.map((todo, index) => (
-            <Card key={index}>
-              {/* <Checkbox label={todo.text} checked={todo.completed}></Checkbox> */}
-              <Checkbox label={todo.text} checked={todo.completed}></Checkbox>
-            </Card>
-          ))}
+          <Card background="bg-fill-caution-secondary">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5rem",
+              }}
+            >
+              {todoList.map((todo, index) => (
+                <Card key={index}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Checkbox
+                      label={todo.text}
+                      checked={todo.completed}
+                      onChange={() => {
+                        const newTodoList = [...todoList];
+                        newTodoList[index].completed =
+                          !newTodoList[index].completed;
+                        setToDoList(newTodoList);
+                      }}
+                    />
+                    <Button>See details</Button>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </Card>
         </Layout.Section>
         <Layout.Section>
           <Card>
