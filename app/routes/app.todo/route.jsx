@@ -8,8 +8,10 @@ import {
   TextField,
   Button,
   Checkbox,
+  HorizontalStack,
 } from "@shopify/polaris";
 import { useNavigate } from "@remix-run/react";
+import TodoDetail from "../app.todo.$title/route";
 
 function Todo() {
   const [todoList, setToDoList] = useState([
@@ -32,39 +34,46 @@ function Todo() {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          <Card background="bg-fill-caution-secondary">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              {todoList.map((todo, index) => (
-                <Card key={index}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Checkbox
-                      label={todo.text}
-                      checked={todo.completed}
-                      onChange={() => {
-                        const newTodoList = [...todoList];
-                        newTodoList[index].completed =
-                          !newTodoList[index].completed;
-                        setToDoList(newTodoList);
+          <HorizontalStack>
+            <Card background="bg-fill-caution-secondary">
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.5rem",
+                }}
+              >
+                {todoList.map((todo, index) => (
+                  <Card key={index}>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
                       }}
-                    />
-                    <Button>See details</Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </Card>
+                    >
+                      <Checkbox
+                        label={todo.text}
+                        checked={todo.completed}
+                        onChange={() => {
+                          const newTodoList = [...todoList];
+                          newTodoList[index].completed =
+                            !newTodoList[index].completed;
+                          setToDoList(newTodoList);
+                        }}
+                      />
+                      <Button
+                        onClick={() => navigate(`/app/todo/${todo.text}`)}
+                      >
+                        See details
+                      </Button>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </Card>
+            <TodoDetail />
+          </HorizontalStack>
         </Layout.Section>
         <Layout.Section>
           <Card>
