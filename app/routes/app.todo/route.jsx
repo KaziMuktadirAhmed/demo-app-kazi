@@ -34,10 +34,11 @@ function Todo() {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          <HorizontalStack>
+          <HorizontalStack gap={"10"}>
             <Card background="bg-fill-caution-secondary">
               <div
                 style={{
+                  flex: 1,
                   display: "flex",
                   flexDirection: "column",
                   gap: "0.5rem",
