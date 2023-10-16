@@ -32,3 +32,18 @@ model QRCode {
   scans            Int      @default(0)
   createdAt        DateTime @default(now())
 }
+
+model Task {
+  id Int @id @default(autoincrement())
+  userId BigInt
+  title String
+  description String?
+  completed Boolean @default(false)
+}
+
+model SubTask {
+  id Int @id @default(autoincrement())
+  taskId Int
+  title String
+  completed Boolean @default(false)
+}
