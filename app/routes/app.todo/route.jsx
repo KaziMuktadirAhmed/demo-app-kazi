@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Page,
   Layout,
@@ -14,8 +14,9 @@ import {
 import { useNavigate } from "@remix-run/react";
 import TodoDetail from "../app.todo.$title/route";
 import { authenticate } from "~/shopify.server";
-import db from "../../db.server";
 import { json, redirect } from "@remix-run/node";
+
+import db from "../../db.server";
 
 export async function action({ request, params }) {
   const { session } = await authenticate.admin(request);
